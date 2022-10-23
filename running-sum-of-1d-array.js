@@ -1,6 +1,6 @@
 var runningSum = function(nums) {
   let newArray = [nums[0]];
-  for (let i = 0; i < nums.length; i ++) {
+  for (let i = 1; i < nums.length; i ++) {
     newArray.push(nums[i] + newArray[newArray.length - 1])
   } 
   return newArray;
