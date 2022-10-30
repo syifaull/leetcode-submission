@@ -39,23 +39,43 @@
 
 // console.log(find_duplicate_in_array([1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]));
 
-const a = [1,1,1,3,3,4,5,5,6,7,8,8,8,8,8,9,2];
+// const a = [1,1,1,3,3,4,5,5,6,7,8,8,8,8,8,9,2];
 
-function findDublicatesNumbersFromArray(a) {
-    var d = [];
-    for (let i = 0; i < a.length; i++) {
-        var ct = a[i];
-        var cmt = 0;
-        for(var x = 0; x<a.length;++x) {
-            if(ct === a[x]) {
-                cmt++
-                if(cmt > 1) {
-                    d.push(a[i])
-                }
-            }
+// function findDublicatesNumbersFromArray(a) {
+//     var d = [];
+//     for (let i = 0; i < a.length; i++) {
+//         var ct = a[i];
+//         var cmt = 0;
+//         for(var x = 0; x<a.length;++x) {
+//             if(ct === a[x]) {
+//                 cmt++
+//                 if(cmt > 1) {
+//                     d.push(a[i])
+//                 }
+//             }
+//         }
+//     }
+//     return d.filter((i, ix)=> d.indexOf(i) === ix);
+// }
+
+// console.log(findDublicatesNumbersFromArray(a)) 
+
+function findDuplicationNumber(numbers) {
+    let result = [];
+    for (let i = 0; i < numbers.length; i++) {
+      let sum = 0;
+      for (let j = 0; j < numbers.length; j++) {
+        if (numbers[i] === numbers[j]) {
+          sum++
+          if (sum > 1) {
+            result.push(numbers[i])
+          }
         }
+      }
     }
-    return d.filter((i, ix)=> d.indexOf(i) === ix);
-}
-
-console.log(findDublicatesNumbersFromArray(a)) 
+    return result.filter((i, ix) => result.indexOf(i) === ix)
+  }
+  
+  console.log(findDuplicationNumber([1, 1])) // [1]
+  console.log(findDuplicationNumber([1, 2, 3, 4])) // []
+  console.log(findDuplicationNumber([1, 2, 1, 2, 2, 3, 4, 5, 5, 5, 5])) // [1, 2, 5]

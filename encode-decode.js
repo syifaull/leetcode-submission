@@ -11,6 +11,7 @@ function encodeDecode(word) {
     } 
   }
   return result += arrayResult.join("")
+  
 }
 
 //encode
