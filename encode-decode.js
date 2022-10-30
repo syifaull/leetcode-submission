@@ -6,11 +6,9 @@ function encodeDecode(word) {
     let charCode = array[i].charCodeAt();
     if (word.slice(0, 8) === "<encode>") {
       arrayResult.push(String.fromCharCode(((charCode - 97  + 2) % 26) + 97));
-    } else if (word.slice(0, 8) === "<decode>") {
-      arrayResult.push(String.fromCharCode(((charCode - 122  - 2) % 26) + 122));
     } else {
-      null
-    }
+      arrayResult.push(String.fromCharCode(((charCode - 122  - 2) % 26) + 122));
+    } 
   }
   return result += arrayResult.join("")
 }
