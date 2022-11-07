@@ -2,13 +2,12 @@
 //   let duplicate = []
 //   for (let i = 0; i < numbers.length; i++ ) {
 //     let newArray = [];
-    
 //     for (let j = i+1; j < numbers.length; j++) {
 //       numbers[j] === numbers[i] ? newArray.push(numbers[j]) : null;
 //     }
 //     return newArray;
 //   }
-//   return duplicate;
+//   return duplicate.filter((i, ix) => duplicate.indexOf(i) === ix)
 
 // }
 
@@ -63,19 +62,19 @@
 function findDuplicationNumber(numbers) {
     let result = [];
     for (let i = 0; i < numbers.length; i++) {
-      let sum = 0;
-      for (let j = 0; j < numbers.length; j++) {
+    let sum = 0;
+    for (let j = 0; j < numbers.length; j++) {
         if (numbers[i] === numbers[j]) {
-          sum++
-          if (sum > 1) {
+        sum++
+        if (sum > 1) {
             result.push(numbers[i])
-          }
         }
-      }
+        }
+    }
     }
     return result.filter((i, ix) => result.indexOf(i) === ix)
-  }
-  
+}
+
   console.log(findDuplicationNumber([1, 1])) // [1]
   console.log(findDuplicationNumber([1, 2, 3, 4])) // []
   console.log(findDuplicationNumber([1, 2, 1, 2, 2, 3, 4, 5, 5, 5, 5])) // [1, 2, 5]
