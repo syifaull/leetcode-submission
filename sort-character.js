@@ -19,5 +19,3 @@ function vowelConsonant(str) {
 
 console.log(vowelConsonant("Sample Case"));
 console.log(vowelConsonant("Next Case"))
-
-// ("a" || "i" || "u" || "e" || "o")
